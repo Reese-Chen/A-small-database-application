@@ -1,11 +1,11 @@
 
-/*¶¨ÒåusersÊı¾İ±í*/
+/*å®šä¹‰usersæ•°æ®è¡¨*/
 CREATE TABLE users(
  [username] [varchar](20) NOT NULL primary key,
  [code] [char](8) not NULL,
  [email] [varchar](40) not NULL)
 
-/*¶¨Òåliterature_websiteÊı¾İ±í*/
+/*å®šä¹‰literature_websiteæ•°æ®è¡¨*/
 create table literature_website
 (
   lname varchar(100) not null,
@@ -20,14 +20,14 @@ create table literature_website
   PRIMARY KEY(lname,username)
 )
 
-/*¶¨ÒåenwordÊı¾İ±í*/
+/*å®šä¹‰enwordæ•°æ®è¡¨*/
 create table enword
 (en varchar(35) not null,
 ch varchar(400),
 primary key(en)
 )
 
-/*¶¨ÒåwordtypesÊı¾İ±í*/
+/*å®šä¹‰wordtypesæ•°æ®è¡¨*/
 create table wordtypes
 (
 en varchar(35) foreign key references enword(en),
@@ -35,7 +35,7 @@ entypes char(7)
 primary key(en,entypes)
 )
 
-/*¶¨ÒåwordrecordÊı¾İ±í*/
+/*å®šä¹‰wordrecordæ•°æ®è¡¨*/
 create table wordrecord
 (
 en varchar(35) foreign key references enword(en),
@@ -44,7 +44,7 @@ username varchar(20) foreign key references users(username)
 primary key(en,username)
 )
 
-/*¶¨ÒåhistoryÊı¾İ±í*/
+/*å®šä¹‰historyæ•°æ®è¡¨*/
 create table history
 (historyfilename varchar(100),
 historyfilepath varchar(200) not null,
@@ -54,7 +54,7 @@ historytime datetime
 primary key(historyfilename,historytime,username))
 
 
-/*¶¨Òå±à³ÌÈí¼ş±£´æÊı¾İ±ísaveexe*/
+/*å®šä¹‰ç¼–ç¨‹è½¯ä»¶ä¿å­˜æ•°æ®è¡¨saveexe*/
  create table saveexe
 (
 username varchar(20) not null  FOREIGN KEY REFERENCES users,
